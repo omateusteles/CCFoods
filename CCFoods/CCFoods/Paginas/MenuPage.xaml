@@ -8,9 +8,10 @@
        Title="Menu de Opções">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
-            <Button Text="Garçons"         Image="icone_garcons.png"          Clicked="GarconsOnClicked"/>
-            <Button Text="Entregadores"    Image="icone_entregadores.png"     Clicked="EntregadoresOnClicked"/>
-            <Button Text="Tipos de Itens" Image="icone_tipoitemcardapio.png" Clicked="TiposItensCardapioOnClicked"/>
+            <Button Text="Garçons"           Image="icone_garcons.png"          Clicked="GarconsOnClicked"/>
+            <Button Text="Entregadores"      Image="icone_entregadores.png"     Clicked="EntregadoresOnClicked"/>
+            <Button Text="Tipos de Itens"    Image="icone_tipoitemcardapio.png" Clicked="TiposItensCardapioOnClicked"/>
+            <Button	Text="Itens	de Cardápio" Image="icone_itenscardapio.png"    Clicked="ItensCardapioOnClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
