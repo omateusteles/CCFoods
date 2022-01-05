@@ -22,10 +22,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <ListView Grid.Row="0" Grid.Column="0" x:Name="lvItensCardapio" BackgroundColor="#ffffe6">
+            <ListView	Grid.Row="0" Grid.Column="0" x:Name="lvItensCardapio" BackgroundColor="#ffffe6" HasUnevenRows="True" 
+                        GroupDisplayBinding="{Binding Key.Nome}" GroupShortNameBinding="{Binding Key.Id}" IsGroupingEnabled="true">
                 <ListView.ItemTemplate BackgroundColor="#ffffe6">
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnAlterarClick" CommandParameter="{Binding .}" Text="Alterar"/>
+                                <MenuItem Clicked="OnRemoverClick" CommandParameter="{Binding .}" Text="Remover" IsDestructive="True"	/>
+                            </ViewCell.ContextActions>
                             <Grid Padding="5, 5, 20, 5">
                                 <Grid.RowDefinitions >
                                     <RowDefinition Height="Auto"/>

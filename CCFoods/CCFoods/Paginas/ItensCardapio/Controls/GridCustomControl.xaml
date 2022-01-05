@@ -31,8 +31,16 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="" x:Name="idTipo" Grid.Row="0" Grid.Column="0" WidthRequest="0"/>
-                    <Label Text="Selecione o Tipo do Item" x:Name="nomeTipo" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text=">" HorizontalOptions="End" Grid.Row="0" Grid.Column="2" BackgroundColor="Gray"/>
+                    <Label Text="Selecione o Tipo do Item" x:Name="nomeTipo" Grid.Row="0" Grid.Column="1">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapLookForTipos" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text=">" HorizontalOptions="End" Grid.Row="0" Grid.Column="2" BackgroundColor="Gray">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapLookForTipos" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
                 <StackLayout HeightRequest="1" BackgroundColor="Black" Padding="0"/>
             </StackLayout>
@@ -53,7 +61,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition>
                             <RowDefinition.Height>
-                                <OnPlatform x:TypeArguments="GridLength" Android="130" iOS="170"/>                            </RowDefinition.Height>
+                                <OnPlatform x:TypeArguments="GridLength" Android="130" iOS="170"/>
+                            </RowDefinition.Height>
                         </RowDefinition>
                         <RowDefinition>
                             <RowDefinition.Height>
@@ -65,14 +74,20 @@
                         <ColumnDefinition Width="100*"/>
                     </Grid.ColumnDefinitions>
                     <Image x:Name="fotoAlbum" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
-                    <Button Text="Recuperar foto do álbum" Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Recuperar foto do álbum" Grid.Row="1" Grid.Column="0" Clicked="OnAlbumClicked"/>
                 </Grid>
             </StackLayout>
             <StackLayout Grid.Row="5" Grid.Column="0" Padding="20, 0, 20, 0" BackgroundColor="#009933" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                     <Image Source="icone_save.png" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedSaveItem" NumberOfTapsRequired="1" />                        </Image.GestureRecognizers>
                     </Image>
-                    <Label Text="Gravar Item" VerticalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="Gravar Item" VerticalOptions="Center" FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedSaveItem" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </StackLayout>
         </Grid>

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Modulo1.Dal;
+using Modulo1.HelpersControls;
+using Modulo1.Modelo;
+using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +11,8 @@ namespace Modulo1.Paginas.ItensCardapio
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItensCardapioPage : ContentPage
     {
+        private TipoItemCardapioDAL dalTipoItemCardapio = new TipoItemCardapioDAL();
+        private ItemCardapioDAL dalItemCardapio = new ItemCardapioDAL();
         public ItensCardapioPage()
         {
             InitializeComponent();
@@ -22,5 +23,41 @@ namespace Modulo1.Paginas.ItensCardapio
         {
             await Navigation.PushAsync(new ItensCardapioNewPage());
         }
+        private Collection<ListViewGrouping<TipoItemCardapio, ItemCardapio>> GetDataByGroup()
+        {
+            var dadosAgrupados = new Collection<ListViewGrouping<TipoItemCardapio, ItemCardapio>>();
+            var tipos = dalTipoItemCardapio.GetAllWithChildren();
+            foreach (var tipo in tipos)
+            {
+                dadosAgrupados.Add(new ListViewGrouping<TipoItemCardapio, ItemCardapio>(tipo, tipo.Itens));
+            }
+            return dadosAgrupados;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            lvItensCardapio.ItemsSource = GetDataByGroup();
+        }
+
+        public async void OnAlterarClick(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var item = mi.CommandParameter as ItemCardapio;
+            await Navigation.PushAsync(new ItensCardapioEditPage(item));
+        }
+        public async void OnRemoverClick(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var item = mi.CommandParameter as ItemCardapio;
+            var opcao = await DisplayAlert("Confirmação de exclusão", "Confirma excluir o item " + item.Nome.ToUpper() + "?", "Sim", "Não");
+
+            if (opcao)
+            {
+                dalItemCardapio.DeleteById((long)item.ItemCardapioId);
+                this.lvItensCardapio.ItemsSource = GetDataByGroup();
+            }
+        }
+
     }
 }

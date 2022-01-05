@@ -1,6 +1,7 @@
 ﻿using Modulo1.Infraestructure;
 using Modulo1.Modelo;
 using SQLite;
+using SQLiteNetExtensions.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
@@ -33,6 +34,10 @@ namespace Modulo1.Dal
         public void Update(TipoItemCardapio tipoItemCardapio)
         {
             sqlConnection.Update(tipoItemCardapio);
+        }
+        public IEnumerable<TipoItemCardapio> GetAllWithChildren()
+        {
+            return sqlConnection.GetAllWithChildren<TipoItemCardapio>().OrderBy(i => i.Nome).ToList();
         }
     }
 }

@@ -29,8 +29,7 @@
                                     <ColumnDefinition Width="20*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image Source="icone_tipoitemcardapio.png" Grid.Row="0" Grid.Column="0"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="Novo Tipo de Item do Cardápio" Font="24" TextColor="Blue" HorizontalOptions="Start"
-                     VerticalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="Novo Tipo de Item do Cardápio" Font="24" TextColor="Blue" HorizontalOptions="Start" VerticalOptions="Center"/>
                                 <Label Grid.Row="0" Grid.Column="2" Text="Id" HorizontalOptions="End" Font="Bold, 24" TextColor="Blue"  VerticalOptions="Center"/>
                             </Grid>
                         </StackLayout>
