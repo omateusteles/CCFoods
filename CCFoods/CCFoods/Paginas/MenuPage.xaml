@@ -12,6 +12,7 @@
             <Button Text="Entregadores"      Image="icone_entregadores.png"     Clicked="EntregadoresOnClicked"/>
             <Button Text="Tipos de Itens"    Image="icone_tipoitemcardapio.png" Clicked="TiposItensCardapioOnClicked"/>
             <Button	Text="Itens	de Cardápio" Image="icone_itenscardapio.png"    Clicked="ItensCardapioOnClicked"/>
+            <Button	Text="Configurações"    Image="icone_settings.png"         Clicked="ConfiguracoesOnClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

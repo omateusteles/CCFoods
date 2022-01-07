@@ -5,6 +5,8 @@ using Modulo1.Paginas.Entregadores;
 using Modulo1.Paginas.Garcons;
 using Modulo1.Paginas.TiposItensCardapio;
 using Modulo1.Paginas.ItensCardapio;
+using Modulo1.Paginas.Configuracao;
+using Modulo1.Dal;
 
 namespace Modulo1.Paginas
 {
@@ -15,10 +17,20 @@ namespace Modulo1.Paginas
         {
             InitializeComponent();
         }
-        
+
         private async void GarconsOnClicked(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new GarconsPage());
+            ConfiguracaoDAL dal = new ConfiguracaoDAL();
+            if (dal.GetConfiguracao() == null)
+            {
+                await DisplayAlert("Erro", "Dispositivo	sem	configuração", "Ok");
+            }
+            else
+            {
+                //await Navigation.PushAsync(new GarconsNewPage
+                await Navigation.PushAsync(new GarconsPage());
+            }
+
         }
         private async void EntregadoresOnClicked(object sender, EventArgs args)
         {
@@ -33,6 +45,10 @@ namespace Modulo1.Paginas
         private async void ItensCardapioOnClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ItensCardapioPage());
+        }
+        private async void ConfiguracoesOnClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ConfiguracoesPage());
         }
     }
 }
