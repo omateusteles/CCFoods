@@ -7,6 +7,7 @@ using Modulo1.Paginas.TiposItensCardapio;
 using Modulo1.Paginas.ItensCardapio;
 using Modulo1.Paginas.Configuracao;
 using Modulo1.Dal;
+using Modulo1.Paginas.Clientes;
 
 namespace Modulo1.Paginas
 {
@@ -27,7 +28,6 @@ namespace Modulo1.Paginas
             }
             else
             {
-                //await Navigation.PushAsync(new GarconsNewPage
                 await Navigation.PushAsync(new GarconsPage());
             }
 
@@ -49,6 +49,11 @@ namespace Modulo1.Paginas
         private async void ConfiguracoesOnClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ConfiguracoesPage());
+        }
+
+        private async void ClientesOnClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ClientesListPage());
         }
     }
 }
