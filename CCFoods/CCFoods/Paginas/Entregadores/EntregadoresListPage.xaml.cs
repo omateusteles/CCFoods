@@ -7,7 +7,7 @@ namespace Modulo1.Paginas.Entregadores
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EntregadoresListPage : ContentPage
     {
-        private EntregadorDAL dalEntregador = EntregadorDAL.GetInstance();
+        private EntregadorDAL dalEntregador = new EntregadorDAL();
         public EntregadoresListPage()
         {
             InitializeComponent();

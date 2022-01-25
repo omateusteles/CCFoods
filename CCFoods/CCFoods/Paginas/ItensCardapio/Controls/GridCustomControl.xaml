@@ -45,11 +45,11 @@
                 <StackLayout HeightRequest="1" BackgroundColor="Black" Padding="0"/>
             </StackLayout>
             <StackLayout Padding="0" Grid.Row="1" Grid.Column="0">
-                <Entry Placeholder="Nome do Item" PlaceholderColor="Gray" x:Name="nome"/>
+                <Entry Placeholder="Nome do Item" PlaceholderColor="Gray" TextColor="Black" x:Name="nome"/>
                 <StackLayout HeightRequest="1" BackgroundColor="Black" Padding="0"/>
             </StackLayout>
             <StackLayout Padding="0" Grid.Row="2" Grid.Column="0">
-                <Entry Placeholder="Preço" PlaceholderColor="Gray" x:Name="preco" Keyboard="Numeric"/>
+                <Entry Placeholder="Preço" PlaceholderColor="Gray" TextColor="Black" x:Name="preco" Keyboard="Numeric"/>
                 <StackLayout HeightRequest="1" BackgroundColor="Black" Padding="0"/>
             </StackLayout>
             <StackLayout Padding="0" Grid.Row="3" Grid.Column="0" VerticalOptions="FillAndExpand">
@@ -81,7 +81,8 @@
                 <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                     <Image Source="icone_save.png" HorizontalOptions="Center">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnTappedSaveItem" NumberOfTapsRequired="1" />                        </Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedSaveItem" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
                     </Image>
                     <Label Text="Gravar Item" VerticalOptions="Center" FontAttributes="Bold">
                         <Label.GestureRecognizers>

@@ -9,6 +9,9 @@ namespace CCFoods
     {
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTcxMzQ0QDMxMzkyZTM0MmUzMGtHQzRrYzhSck1DOXJ5eE9SaVJtK1Y1bGRxV3kyb2dOZEJpd2hPWFB3ZjA9");
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new MenuPage());

@@ -9,9 +9,10 @@
     <ContentPage.Content>
         <Frame>
             <StackLayout VerticalOptions="Center" Padding="10">
-                <Entry Placeholder="Email" PlaceholderColor="Gray" x:Name="eMail"/>
+                <Entry Placeholder="Email" PlaceholderColor="Gray" TextColor="Black" x:Name="eMail"/>
                 <Label x:Name="dispositivoId" Text="Sem Id" HorizontalOptions="Center"/>
                 <Button Text="Obter Id para o dispositivo" Clicked="OnClickedObter" x:Name="BtnObterId"/>
             </StackLayout>
         </Frame>
-    </ContentPage.Content></ContentPage>
+    </ContentPage.Content>
+</ContentPage>

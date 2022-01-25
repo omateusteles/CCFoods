@@ -43,7 +43,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100*"/>
                                 </Grid.ColumnDefinitions>
-                                <Entry Placeholder="Nome do Tipo" PlaceholderColor="Gray" Grid.Row="0" Grid.Column="0" Text="{Binding Nome}" x:Name="nome"/>
+                                <Entry Placeholder="Nome do Tipo" PlaceholderColor="Gray" TextColor="Black" Grid.Row="0" Grid.Column="0" Text="{Binding Nome}" x:Name="nome"/>
                             </Grid>
                         </StackLayout>
                     </Frame>

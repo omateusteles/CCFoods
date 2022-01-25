@@ -1,9 +1,45 @@
-﻿using Modulo1.Modelo;
+﻿using Modulo1.Infraestructure;
+using Modulo1.Modelo;
+using SQLite;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using Xamarin.Forms;
+
 namespace Modulo1.Dal
 {
     public class EntregadorDAL
     {
+        private SQLiteConnection sqlConnection;
+        public EntregadorDAL()
+        {
+            this.sqlConnection = DependencyService.Get<IDatabaseConnection>().DbConnection();
+            this.sqlConnection.CreateTable<Entregador>();
+        }
+
+        public void Add(Entregador entregador)
+        {
+            sqlConnection.Insert(entregador);
+        }
+        public void DeleteById(long id)
+        {
+            sqlConnection.Delete<Entregador>(id);
+        }
+        public void Update(Entregador entregador)
+        {
+            sqlConnection.Update(entregador);
+        }
+        public IEnumerable<Entregador> GetAll()
+        {
+            return (from t in sqlConnection.Table<Entregador>() select t).OrderBy(i => i.Nome).ToList();
+        }
+        public Entregador GetClienteById(long id)
+        {
+            return sqlConnection.Table<Entregador>().FirstOrDefault(t => t.EntregadorId == id);
+        }
+
+
+        /*
         private ObservableCollection<Entregador> Entregadores = new ObservableCollection<Entregador>();
         private static EntregadorDAL EntregadorInstance = new EntregadorDAL();
         private EntregadorDAL()
@@ -13,8 +49,7 @@ namespace Modulo1.Dal
                 Id = 1,
                 Nome = "Brauzio",
                 Telefone = "Asdrugio"
-            }
-);
+            });
             Entregadores.Add(new Entregador()
             {
                 Id = 2,
@@ -90,5 +125,6 @@ namespace Modulo1.Dal
         {
             this.Entregadores.Add(entregador);
         }
+        */
     }
 }

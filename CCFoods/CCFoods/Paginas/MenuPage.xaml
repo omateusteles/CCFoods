@@ -14,6 +14,8 @@
             <Button	Text="Itens	de Cardápio" Image="icone_itenscardapio.png"    Clicked="ItensCardapioOnClicked"/>
             <Button	Text="Configurações"     Image="icone_settings.png"         Clicked="ConfiguracoesOnClicked"/>
             <Button	Text="Clientes"          Image="icone_clientes.png"         Clicked="ClientesOnClicked"/>
+            <Button	Text="Pedidos"           Image="icone_pedidos.png"          Clicked="PedidosOnClicked"/>
+            <Button	Text="Gráficos"          Image="icone_graficos.png"         Clicked="GraficosOnClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

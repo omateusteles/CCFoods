@@ -29,7 +29,7 @@
                         <ViewCell>
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="OnAlterarClick" CommandParameter="{Binding .}" Text="Alterar"/>
-                                <MenuItem Clicked="OnRemoverClick" CommandParameter="{Binding .}" Text="Remover" IsDestructive="True"	/>
+                                <MenuItem Clicked="OnRemoverClick" CommandParameter="{Binding .}" Text="Remover" IsDestructive="True"/>
                             </ViewCell.ContextActions>
                             <Grid Padding="5, 5, 20, 5">
                                 <Grid.RowDefinitions >

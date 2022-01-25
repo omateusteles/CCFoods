@@ -58,6 +58,5 @@ namespace Modulo1.Paginas.ItensCardapio
                 this.lvItensCardapio.ItemsSource = GetDataByGroup();
             }
         }
-
     }
 }

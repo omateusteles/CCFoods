@@ -8,6 +8,8 @@ using Modulo1.Paginas.ItensCardapio;
 using Modulo1.Paginas.Configuracao;
 using Modulo1.Dal;
 using Modulo1.Paginas.Clientes;
+using Modulo1.Paginas.Pedidos;
+using Modulo1.Paginas.Graficos;
 
 namespace Modulo1.Paginas
 {
@@ -30,7 +32,6 @@ namespace Modulo1.Paginas
             {
                 await Navigation.PushAsync(new GarconsPage());
             }
-
         }
         private async void EntregadoresOnClicked(object sender, EventArgs args)
         {
@@ -54,6 +55,15 @@ namespace Modulo1.Paginas
         private async void ClientesOnClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ClientesListPage());
+        }
+
+        private async void PedidosOnClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new PedidosPage());
+        }
+        private async void GraficosOnClicked(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new GraficoDeBarrasDePedidosPorDiaPage());
         }
     }
 }
