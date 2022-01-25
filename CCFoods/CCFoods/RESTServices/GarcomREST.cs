@@ -39,7 +39,7 @@ namespace Modulo1.RESTServices
 
         public async Task<List<Garcom>> GetGarconsAsync()
         {
-            var uri = new Uri(string.Format("https://localhost:7167/garcons/todos"));
+            var uri = new Uri(string.Format("https://aplicationserverapi.azurewebsites.net/garcons/todos"));;
 
             var response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode)
