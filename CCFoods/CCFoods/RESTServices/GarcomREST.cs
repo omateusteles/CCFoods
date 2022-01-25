@@ -21,7 +21,6 @@ namespace Modulo1.RESTServices
         public async Task UpdateGarconsToServerAsync(IEnumerable<Garcom> garcons)
         {
             var uri = new Uri(string.Format("https://aplicationserverapi.azurewebsites.net/garcom/insert"));
-
             var garcomDAL = new GarcomDAL();
             foreach (var garcom in garcons)
             {
@@ -40,7 +39,7 @@ namespace Modulo1.RESTServices
 
         public async Task<List<Garcom>> GetGarconsAsync()
         {
-            var uri = new Uri(string.Format("https://aplicationserverapi.azurewebsites.net/garcons/todos"));
+            var uri = new Uri(string.Format("https://localhost:7167/garcons/todos"));
 
             var response = await client.GetAsync(uri);
             if (response.IsSuccessStatusCode)

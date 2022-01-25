@@ -60,7 +60,7 @@
     <EmbeddedResource Update="Paginas\Garcons\GarconsNewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Paginas\Garcons\GarconsPage.xaml">
+    <EmbeddedResource Update="Paginas\Clientes\GarconsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Paginas\Graficos\GraficoDeBarrasDePedidosPorDiaPage.xaml">
