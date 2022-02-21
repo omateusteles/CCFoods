@@ -6,7 +6,7 @@
 		<provider android:name="androidx.core.content.FileProvider" android:authorities="br.com.casadocodigo.CCFoods.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
 		</provider>
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBvo-C5OJO-5M5CRCf6B4R6eOzMio0JYCY" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
