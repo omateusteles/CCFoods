@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="br.com.casadocodigo.CCFoods" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
 	<application android:label="CC Foods" android:theme="@style/MainTheme" android:icon="@drawable/cc2929">
-		<!--	Sem	AndroidX	-->
 		<provider android:name="androidx.core.content.FileProvider" android:authorities="br.com.casadocodigo.CCFoods.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
 		</provider>
+		<!--	Obviamente a chave do Maps não é mais válida 	-->
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBvo-C5OJO-5M5CRCf6B4R6eOzMio0JYCY" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
